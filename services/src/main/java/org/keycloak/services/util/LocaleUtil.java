@@ -31,10 +31,15 @@ public class LocaleUtil {
 
     public static void processLocaleParam(KeycloakSession session, RealmModel realm, AuthenticationSessionModel authSession) {
         if (authSession != null && realm.isInternationalizationEnabled()) {
-            String locale = session.getContext().getUri().getQueryParameters().getFirst(LocaleSelectorProvider.KC_LOCALE_PARAM);
+            String kcLocale = session.getContext().getUri().getQueryParameters().getFirst(LocaleSelectorProvider.KC_LOCALE_PARAM);
+            String locale = session.getContext().resolveLocale(null).getLanguage();
+
+            // If KL Locale is set use it as session current language
+            if (kcLocale != null) {
+                locale = kcLocale;
+            }
             if (locale != null) {
                 authSession.setAuthNote(LocaleSelectorProvider.USER_REQUEST_LOCALE, locale);
-
                 LocaleUpdaterProvider localeUpdater = session.getProvider(LocaleUpdaterProvider.class);
                 localeUpdater.updateLocaleCookie(locale);
             }
