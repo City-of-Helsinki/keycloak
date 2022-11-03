@@ -35,6 +35,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <upstream.keycloak.version>19.0.2</upstream.keycloak.version>
         <jboss.repo.nexusUrl>https://s01.oss.sonatype.org/</jboss.repo.nexusUrl>
         <jboss.releases.repo.id>jboss-releases-repository</jboss.releases.repo.id>
         <jboss.releases.repo.url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
@@ -296,7 +297,7 @@
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-dependencies-admin-ui-wrapper</artifactId>
-                <version>${project.version}</version>
+                <version>${upstream.keycloak.version}</version>
                 <type>pom</type>
             </dependency>
             <dependency>
@@ -1418,7 +1419,7 @@
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-admin-ui</artifactId>
-                <version>${project.version}</version>
+                <version>${upstream.keycloak.version}</version>
             </dependency>
 
             <!-- Openshift -->
