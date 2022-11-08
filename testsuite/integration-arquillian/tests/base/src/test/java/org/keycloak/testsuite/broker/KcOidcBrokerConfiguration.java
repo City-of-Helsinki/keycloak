@@ -18,9 +18,9 @@ import org.keycloak.representations.idm.RealmRepresentation;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static org.keycloak.testsuite.broker.BrokerTestConstants.*;
 import static org.keycloak.testsuite.broker.BrokerTestTools.*;
@@ -46,7 +46,7 @@ public class KcOidcBrokerConfiguration implements BrokerConfiguration {
         realm.setEventsListeners(Arrays.asList("jboss-logging", "event-queue"));
         realm.setEventsEnabled(true);
         realm.setInternationalizationEnabled(true);
-        realm.setSupportedLocales(Set.of("en", "hu"));
+        realm.setSupportedLocales(new HashSet<>(Arrays.asList("en", "hu")));
 
         return realm;
     }
@@ -60,7 +60,7 @@ public class KcOidcBrokerConfiguration implements BrokerConfiguration {
         realm.setEventsListeners(Arrays.asList("jboss-logging", "event-queue"));
         realm.setEventsEnabled(true);
         realm.setInternationalizationEnabled(true);
-        realm.setSupportedLocales(Set.of("en", "hu"));
+        realm.setSupportedLocales(new HashSet<>(Arrays.asList("en", "hu")));
 
         return realm;
     }
