@@ -43,6 +43,7 @@ public class LocaleUtil {
 
                 LocaleUpdaterProvider localeUpdater = session.getProvider(LocaleUpdaterProvider.class);
                 localeUpdater.updateLocaleCookie(locale);
+                localeUpdater.updateUsersLocale(authSession.getAuthenticatedUser(), locale);
             }
         }
     }
