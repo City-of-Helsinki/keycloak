@@ -31,7 +31,7 @@
     </description>
     <groupId>org.keycloak</groupId>
     <artifactId>keycloak-parent</artifactId>
-    <version>19.0.2-helsinki-1</version>
+    <version>19.0.2-helsinki-2</version>
     <packaging>pom</packaging>
 
     <properties>
