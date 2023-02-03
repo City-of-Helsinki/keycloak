@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.keycloak</groupId>
         <artifactId>keycloak-testsuite-pom</artifactId>
-        <version>19.0.2-helsinki-1</version>
+        <version>19.0.2-helsinki-4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
